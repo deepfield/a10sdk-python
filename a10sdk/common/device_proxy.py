@@ -1,12 +1,12 @@
 __author__ = 'mthompson'
 import base64
-import httplib
+import http.client as httplib
 import json
 import mimetypes
 import random
 import string
 import urllib
-import urlparse
+import urllib.parse as urlparse
 
 class DeviceProxy():
     def __init__(self, host, port, username, password, use_https=True, keep_alive=False, forwarded_ip=""):

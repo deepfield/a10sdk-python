@@ -4,15 +4,13 @@ import inspect
 import importlib
 import urllib
 import json
-from urlparse import urlparse
+
+from urllib.parse import urlparse
+
 import collections
 import re
 import os
 import keyword
-
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 class A10BaseClass(object):
     is_POST = True
@@ -602,7 +600,7 @@ class A10BaseClass(object):
                     end_index = self.a10_url.index('}')
                     self.a10_url = self.a10_url.replace(self.a10_url[start_index:end_index+1], '')
                 except ValueError as e:
-                    print 'Substring not found', e
+                    print ('Substring not found', e)
                     break
             self.a10_url = self.a10_url.replace('+/', '/')
             self.a10_url = self.a10_url.replace('/+', '/')
